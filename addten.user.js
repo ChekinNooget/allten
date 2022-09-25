@@ -29,6 +29,9 @@
     for (let i = 0; i < textArr.length; i++) {
       fullText = fullText + textArr[i];
     }
-    navigator.clipboard.writeText(fullText);
+    var copyElem = document.getElementById("3834033daa48");
+    copyElem.querySelector(":nth-child(3)").textContent = fullText;
+    copyElem.querySelector(":nth-child(4)").textContent =
+      "[url]https://beastacademy.com/all-ten[/url]";
   };
 })();
