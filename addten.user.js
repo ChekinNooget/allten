@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Add Ten
 // @namespace    https://github.com/ChekinNooget
-// @version      0.1
+// @version      0.2
 // @description  Add Ten QoL
 // @author       Chekin Nooget
 // @match        https://beastacademy.com/all-ten
