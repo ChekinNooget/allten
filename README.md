@@ -1,4 +1,4 @@
-# Add Ten AoPS Clipboard Modifier
+# [Add Ten](https://beastacademy.com/all-ten) AoPS Clipboard Modifier
 changes the copied clipboard text from emoji to aops symbols
 
 first download [tampermonkey](https://www.tampermonkey.net/)
