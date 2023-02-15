@@ -13,12 +13,33 @@
   "use strict";
   //variable setup
   let [seconds, minutes, hours] = [0, 0, 0];
+  //check current puzzle numbers
+  let number = "c-ejvBir-hVkEDL-color-start";
+  let tempNum = "";
+  for (let i = 0; i < document.getElementsByClassName(number).length; i++) {
+    tempNum += document.getElementsByClassName(number)[i].textContent;
+  }
+  if (localStorage.getItem("puzzleData") != tempNum) {
+    resetTimer();
+  }
+  localStorage.setItem("puzzleData", tempNum);
+  console.log(tempNum);
+
+  //previous data
   let numCorrect = 0;
   if (localStorage.getItem("seconds") != null) {
-    //retrieve seconds if exists
     seconds = parseInt(localStorage.getItem("seconds"));
     minutes = parseInt(localStorage.getItem("minutes"));
     hours = parseInt(localStorage.getItem("hours"));
+  }
+
+  function resetTimer() {
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    localStorage.setItem("seconds", 0);
+    localStorage.setItem("minutes", 0);
+    localStorage.setItem("hours", 0);
   }
 
   function displayTimer() {
@@ -40,9 +61,7 @@
       if (localStorage.getItem("shouldReset") == "true") {
         //if the puzzle is reset then restart timer
         localStorage.setItem("shouldReset", "false");
-        localStorage.setItem("seconds", 0);
-        localStorage.setItem("minutes", 0);
-        localStorage.setItem("hours", 0);
+        resetTimer();
       }
 
       //otherwise count up
