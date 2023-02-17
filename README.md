@@ -14,4 +14,4 @@ XX:XX:XX
 
 which will change into check marks in the aops feed, because emojiis can't be rendered in AoPS forums.
 
-There is also a stopwatch function which can track your time spent on the problem!
+There is also a stopwatch function which can track your time spent on the problem! It automatically resets every time there is a new puzzle.
