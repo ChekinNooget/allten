@@ -12,7 +12,7 @@
 (function () {
   "use strict";
   //variable setup
-  let [seconds, minutes, hours] = [0, 0, 0];
+  let [seconds, minutes] = [0, 0];
   //check current puzzle numbers
   let number = "c-ejvBir-hVkEDL-color-start";
   let tempNum = "";
@@ -30,16 +30,13 @@
   if (localStorage.getItem("seconds") != null) {
     seconds = parseInt(localStorage.getItem("seconds"));
     minutes = parseInt(localStorage.getItem("minutes"));
-    hours = parseInt(localStorage.getItem("hours"));
   }
 
   function resetTimer() {
     seconds = 0;
     minutes = 0;
-    hours = 0;
     localStorage.setItem("seconds", 0);
     localStorage.setItem("minutes", 0);
-    localStorage.setItem("hours", 0);
   }
 
   function displayTimer() {
@@ -69,15 +66,10 @@
       if (seconds == 60) {
         seconds = 0;
         minutes++;
-        if (minutes == 60) {
-          minutes = 0;
-          hours++;
-        }
       }
       //set timer to local storage
       localStorage.setItem("seconds", seconds.toString());
       localStorage.setItem("minutes", minutes.toString());
-      localStorage.setItem("hours", hours.toString());
     }
   }
   let timerInterval = null;
@@ -102,10 +94,9 @@
     }
     var copyElem = document.getElementById("3834033daa48");
     copyElem.querySelector(":nth-child(3)").textContent = fullText;
-    let h = hours < 10 ? "0" + hours : hours;
-    let m = minutes < 10 ? "0" + minutes : minutes;
+    let m = minutes;
     let s = seconds < 10 ? "0" + seconds : seconds;
-    var temp = `${h}:${m}:${s}`;
+    var temp = `${m}:${s}`;
     copyElem.querySelector(
       ":nth-child(4)"
     ).textContent = `[url]https://beastacademy.com/all-ten[/url]\n${temp}`;
