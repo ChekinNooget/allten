@@ -93,12 +93,9 @@
       fullText = fullText + textArr[i];
     }
     var copyElem = document.getElementById("3834033daa48");
-    copyElem.querySelector(":nth-child(3)").textContent = fullText;
     let m = minutes;
     let s = seconds < 10 ? "0" + seconds : seconds;
     var temp = `${m}:${s}`;
-    copyElem.querySelector(
-      ":nth-child(4)"
-    ).textContent = `[url]https://beastacademy.com/all-ten[/url]\n${temp}`;
+    copyElem.querySelector(":nth-child(3)").textContent = fullText + `\n[url]https://beastacademy.com/all-ten[/url]\n${temp}`;
   };
 })();
